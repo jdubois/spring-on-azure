@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "io.github.jdubois.bugtracker"
+    },
+    "jhipsterVersion": "6.0.1",
+    "applicationType": "monolith",
+    "baseName": "bugtracker",
+    "packageName": "io.github.jdubois.bugtracker",
+    "packageFolder": "io/github/jdubois/bugtracker",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Y2E0MjVmYzU5YzBkZGZjMGJjNzM2NWMwMjY3NmE0ZGY4NDE2ZWE4ZWZkOWUyMzM5MzE2MmQwMTYzOTYzNTU2OWM0MjQ3NTFlNjA5ZTcwMzY2M2I2M2FjNWE5YzQyYWZiN2EzMTdkZDliYTc5NGVjZWRlNTVmZTMyMGQxNjhhZTU=",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": ["gatling", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}

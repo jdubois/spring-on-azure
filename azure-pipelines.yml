@@ -40,3 +40,8 @@ jobs:
       #----------------------------------------------------------------------
       - script: ./mvnw package -Pprod -DskipTests
         displayName: 'BUILD: creating production build'
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'target'
+          Contents: '*.jar'
+          TargetFolder: '$(build.artifactstagingdirectory)'

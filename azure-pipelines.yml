@@ -38,5 +38,13 @@ jobs:
       #----------------------------------------------------------------------
       # Production build
       #----------------------------------------------------------------------
-      - script: ./mvnw package -Pprod -DskipTests
-        displayName: 'BUILD: creating production build'
+      - task: Maven@3
+        inputs:
+          mavenPomFile: 'pom.xml'
+          options: '-Pprod -DskipTests'
+          publishJUnitResults: true
+          testResultsFiles: '**/surefire-reports/TEST-*.xml'
+          javaHomeOption: 'JDKVersion'
+          mavenVersionOption: 'Default'
+          mavenAuthenticateFeed: false
+          sonarQubeRunAnalysis: false

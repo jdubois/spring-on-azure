@@ -15,9 +15,9 @@
 
 logging:
   level:
-    ROOT: INFO
-    io.github.jdubois.bugtracker: INFO
-    io.github.jhipster: INFO
+    ROOT: DEBUG
+    io.github.jdubois.bugtracker: DEBUG
+    io.github.jhipster: DEBUG
 
 management:
   metrics:

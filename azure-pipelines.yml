@@ -35,3 +35,8 @@ jobs:
         displayName: 'TESTS: frontend'
       - script: ./mvnw verify -Pprod -DskipTests
         displayName: 'TESTS: packaging'
+      #----------------------------------------------------------------------
+      # Production build
+      #----------------------------------------------------------------------
+      - script: ./mvnw package -Pprod -DskipTests
+        displayName: 'BUILD: creating production build'

@@ -4,6 +4,15 @@ import { SERVER_API_URL } from 'app/app.constants';
 import { AccountService } from 'app/core';
 import { JhiDateUtils } from 'ng-jhipster';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { ApplicationInsightsService } from 'app/core/insights/application-insights.service';
+
+class MockApplicationInsightsService {
+  setUserId(userId: string) {}
+
+  clearUserId() {}
+
+  logPageView(name?: string, uri?: string) {}
+}
 
 describe('Service Tests', () => {
   describe('Account Service', () => {
@@ -13,7 +22,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
-        providers: [JhiDateUtils]
+        providers: [JhiDateUtils, { provide: ApplicationInsightsService, useClass: MockApplicationInsightsService }]
       });
 
       service = TestBed.get(AccountService);

@@ -6,6 +6,7 @@ import locale from '@angular/common/locales/en';
 
 import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDateMomentAdapter } from 'app/shared/util/datepicker-adapter';
+import { ApplicationInsightsService } from 'app/core/insights/application-insights.service';
 
 @NgModule({
   imports: [HttpClientModule],
@@ -18,7 +19,8 @@ import { NgbDateMomentAdapter } from 'app/shared/util/datepicker-adapter';
       useValue: 'en'
     },
     { provide: NgbDateAdapter, useClass: NgbDateMomentAdapter },
-    DatePipe
+    DatePipe,
+    ApplicationInsightsService
   ]
 })
 export class BugtrackerCoreModule {

@@ -13,6 +13,10 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+azure:
+  application-insights:
+    instrumentation-key: a8aca698-844c-4515-9875-fb6b480e4fec
+
 logging:
   level:
     ROOT: INFO

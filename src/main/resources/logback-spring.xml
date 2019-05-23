@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration>
-
 <configuration scan="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
@@ -26,6 +24,19 @@
         <appender-ref ref="ASYNC"/>
     </root>
 -->
+    <springProperty scope="context" name="INSTRUMENTATION_KEY"
+                    source="azure.application-insights.instrumentation-key"/>
+
+    <appender name="aiAppender"
+              class="com.microsoft.applicationinsights.logback.ApplicationInsightsAppender">
+        <instrumentationKey>${INSTRUMENTATION_KEY}</instrumentationKey>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="aiAppender" />
+    </root>
+
+    <logger name="com.microsoft.applicationinsights" level="INFO"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>

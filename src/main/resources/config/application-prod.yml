@@ -68,6 +68,13 @@ spring:
     password:
   thymeleaf:
     cache: true
+  cache:
+    type: redis
+  redis:
+    ssl: true
+    host: spring-on-azure.redis.cache.windows.net
+    port: 6380
+    password: Y27iYghxMcY1qoRVyjQkZExS8RaHdln4QfLsqHRNsHE=
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:

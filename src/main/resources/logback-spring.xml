@@ -38,6 +38,9 @@
 
     <logger name="com.microsoft.applicationinsights" level="INFO"/>
 
+    <logger name="io.netty" level="INFO"/>
+    <logger name="io.lettuce" level="INFO"/>
+
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>
     <logger name="javax.management.remote" level="WARN"/>

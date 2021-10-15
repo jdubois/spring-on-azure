@@ -16,7 +16,10 @@ export class ApplicationInsightsService {
 
   constructor(private router: Router) {
     this.appInsights.loadAppInsights();
-    this.routerSubscription = this.router.events.pipe(filter(event => event instanceof ResolveEnd)).subscribe((event: ResolveEnd) => {
+    this.routerSubscription = this.router.events.pipe(
+            filter((event): event is ResolveEnd => event instanceof ResolveEnd)
+          )
+          .subscribe(event => {
       const activatedComponent = this.getActivatedComponent(event.state.root);
       if (activatedComponent) {
         this.logPageView(`${activatedComponent.name} ${this.getRouteTemplate(event.state.root)}`, event.urlAfterRedirects);
